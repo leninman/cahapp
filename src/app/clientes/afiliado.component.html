@@ -1,0 +1,41 @@
+<div class="card mb-3">
+    <div class="card-header">Afliados</div>
+    <div class="card-body">
+      <h5 class="card-title">Listado de afiliados</h5>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/afiliados/formafiliado']">Crear Afiliado</button>
+      </div>
+      <div *ngIf="afiliados?.length==0" class="aler alert-info">
+          No hay registros en la tabla
+      </div>
+      <table class="table table-bordered table-striped" *ngIf="afiliados?.length>0">
+        <thead>
+          <tr>
+            <th>Numero</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Fecha de creación</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let afiliado of afiliados">
+            <td>{{ afiliado.id }}</td>
+            <td>{{ afiliado.nombre }}</td>
+            <td>{{ afiliado.apellido }}</td>
+            <td>{{ afiliado.email }}</td>
+            <td>{{ afiliado.createAt}}</td>
+            <td>
+              <button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/afiliados/formafiliado',afiliado.id]">Editar</button>
+            </td>
+            <td>
+              <button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="delete(afiliado)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
