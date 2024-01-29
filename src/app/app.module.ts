@@ -14,12 +14,17 @@ import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth-guard';
 import { AuthService } from './login/auth.service';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { FormusuarioComponent } from './usuarios/usuario/formusuario/formusuario.component';
 const routes:Routes=[
-  {path:'', redirectTo:'/inicio',pathMatch:'full'},
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path:'directivas',component: DirectivaforComponent},
   {path:'afiliados',component: AfiliadoComponent},
+  {path:'usuarios',component: UsuariosComponent},
   {path:'afiliados/formafiliado',component:FormafiliadoComponent},
   {path:'afiliados/formafiliado/:id',component:FormafiliadoComponent},
+  {path:'usuarios/usuario/formusuario',component:FormusuarioComponent},
+  {path:'usuarios/usuario/formusuario/:id',component:FormusuarioComponent},
   {path:'inicio',component:InicioComponent},
   {path:'login',component:LoginComponent}
 
@@ -36,6 +41,8 @@ const routes:Routes=[
     FormafiliadoComponent,
     InicioComponent,
     LoginComponent,
+    UsuariosComponent,
+    FormusuarioComponent,
   ],
   imports: [
     FormsModule,

@@ -51,4 +51,8 @@ export class FormafiliadoComponent {
     )
   }
 
+  cerrar(): void {
+    this.router.navigate(['/afiliados']);
+  }
+
 }

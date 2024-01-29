@@ -1,12 +1,15 @@
-<div class="card mb-3">
+<div class="container my-3">
+  <div class="card mb-3">
     <div class="card-header">Afliados</div>
     <div class="card-body">
       <h5 class="card-title">Listado de afiliados</h5>
       <div class="my-2 text-left">
-        <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/afiliados/formafiliado']">Crear Afiliado</button>
+        <button class="btn btn-rounded btn-primary espacio-horizontal" type="button" [routerLink]="['/afiliados/formafiliado']">Crear
+          Afiliado</button>
+        <button class="btn btn-rounded btn-primary espacio-horizontal" type="button" [routerLink]="['/inicio']">Cerrar</button>
       </div>
       <div *ngIf="afiliados?.length==0" class="aler alert-info">
-          No hay registros en la tabla
+        No hay registros en la tabla
       </div>
       <table class="table table-bordered table-striped" *ngIf="afiliados?.length>0">
         <thead>
@@ -28,14 +31,18 @@
             <td>{{ afiliado.email }}</td>
             <td>{{ afiliado.createAt}}</td>
             <td>
-              <button type="button" name="editar" class="btn btn-primary btn-sm" [routerLink]="['/afiliados/formafiliado',afiliado.id]">Editar</button>
+              <button type="button" name="editar" class="btn btn-primary btn-sm"
+                [routerLink]="['/afiliados/formafiliado',afiliado.id]">Editar</button>
             </td>
             <td>
-              <button type="button" name="eliminar" class="btn btn-danger btn-sm" (click)="delete(afiliado)">Eliminar</button>
+              <button type="button" name="eliminar" class="btn btn-danger btn-sm"
+                (click)="delete(afiliado)">Eliminar</button>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  
+
+
+</div>
